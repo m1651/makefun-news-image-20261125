@@ -53,7 +53,9 @@ MAKEFUN_OUTPUT_DIR=out python3 main.py
 ```
 
 `main.py` uses only the Python standard library, needs no network, and
-copies `entry.png` to `$MAKEFUN_OUTPUT_DIR/entry.png`. Running it twice
+copies `entry.png` to `$MAKEFUN_OUTPUT_DIR/entry.png`. It checks the PNG
+signature before copying, so a damaged image fails loudly instead of
+submitting silently. Running it twice
 produces byte-identical output: a 1024×1024 PNG of about 172 KB, inside
 the competition's 1 MiB and 1024×1024 limits.
 
